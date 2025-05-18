@@ -67,10 +67,11 @@ const Education = () => {
       school: 'University of East London',
       degree: 'Master of Science in Sport Science',
       period: '2023 - 2024',
-      location: 'London, UK',
+      location: 'Manchester, UK',
       description: 'Specializing in sports performance analysis and data science applications in football.',
       achievements: [
-        'Thesis: "Data-Driven Player Recruitment in Professional Football"',
+        '1st Thesis: "Data-Driven Player Recruitment in Professional Football"',
+        'Master Thesis: "Goal kicks in Nike Liga and how to enhance them"',
         'Advanced research in performance analysis methodologies',
         'Focus on statistical modeling and predictive analytics'
       ],
