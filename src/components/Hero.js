@@ -66,9 +66,16 @@ const Hero = () => (
         alt={profile.name}
         className="relative aspect-[4/5] w-full rounded-[1.75rem] border border-line object-cover object-[50%_30%]"
       />
-      <div className="panel absolute -bottom-5 -left-5 px-4 py-3 shadow-xl">
-        <p className="eyebrow">Former pro</p>
-        <p className="text-sm font-medium">Slovakia youth international</p>
+      <div className="panel absolute -bottom-6 -left-5 right-6 space-y-2.5 px-4 py-3 shadow-xl sm:right-auto sm:max-w-[17rem]">
+        <div>
+          <p className="eyebrow">Former pro</p>
+          <p className="text-sm font-medium">Slovakia youth international · Sparta academy</p>
+        </div>
+        <div className="border-t border-line pt-2.5">
+          <p className="eyebrow text-accent">Currently</p>
+          <p className="text-sm font-medium">{profile.role}</p>
+          <p className="text-xs text-muted">{profile.club}</p>
+        </div>
       </div>
     </motion.div>
   </section>
