@@ -21,7 +21,7 @@ export const stats = [
   { value: '2×', label: 'Back-to-back 2nd places at DAC — best in club history, record points' },
   { value: '2', label: 'Club-record outgoing transfers identified and supported (Krstović, Bajo)' },
   { value: '6', label: 'Analysts led as Head of Analysis at DAC 1904' },
-  { value: '35% → 60%', label: 'Data and software costs at Sparta: 35% cut by dropping unused tools, heading to 60% as we build core tools in-house' },
+  { value: '35%', label: 'Of the data and software budget saved at Sparta by replacing external platforms with our own in-house tools' },
 ];
 
 // What the current role actually covers, beyond the title.
@@ -64,7 +64,7 @@ export const experience = [
       'Support the Sporting Director on strategy, squad planning, job descriptions and staff identification.',
       'Translate the football strategy into position profiles, ratings, team KPIs, expected-points and Elo models.',
       'Built SkillCorner physical and game-intelligence position ratings to add tracking context to event data.',
-      'Cut 35% of data and software spend by dropping unused tools; building core tools in-house to reach a 60% total reduction.',
+      'Replaced external data platforms with club-built tools, saving around 35% of the data and software budget.',
       'Support outgoing-transfer strategy and early club-to-club conversations about player sales.',
     ],
     tags: ['Insights leadership', 'Recruitment', 'Tracking data', 'Sporting strategy', 'Platform build'],
