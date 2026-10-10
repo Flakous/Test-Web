@@ -53,11 +53,11 @@ export const experience = [
     id: 'sparta',
     title: 'Head of Club Analytics & Insights',
     company: 'AC Sparta Praha',
-    period: 'Aug 2024 – Present',
+    period: 'Jan 2026 – Present',
     location: 'Prague, Czech Republic',
     current: true,
     summary:
-      'Joined as Lead Recruitment Analyst and grew the role into leading the club’s football data and insights function across recruitment, first team and sporting leadership.',
+      'Promoted from Lead Recruitment Analyst to lead the club’s football data and insights function across recruitment, first team and sporting leadership.',
     highlights: [
       'Lead the football data and analytics function, coordinating a data engineer and analytical support.',
       'Work with the first-team coaching staff every day on tactical, opposition, video and data analysis.',
@@ -67,12 +67,35 @@ export const experience = [
       'Replaced external data platforms with club-built tools, saving around 35% of the data and software budget.',
       'Support outgoing-transfer strategy and early club-to-club conversations about player sales.',
     ],
-    tags: ['Insights leadership', 'Recruitment', 'Tracking data', 'Sporting strategy', 'Platform build'],
+    tags: ['Insights leadership', 'First team', 'Tracking data', 'Sporting strategy', 'Platform build'],
+    images: [
+      '/images/Platform/sparta-data-platform.jpg',
+      '/images/Platform/pass-decision-model.jpg',
+    ],
+  },
+  {
+    id: 'sparta-recruitment',
+    title: 'Lead Recruitment Analyst',
+    company: 'AC Sparta Praha',
+    period: 'Aug 2024 – Jan 2026',
+    location: 'Prague, Czech Republic',
+    summary:
+      'Led recruitment analysis: turning internal and external data into player insight that directly shaped recruitment decisions.',
+    highlights: [
+      'Led sourcing and analysis of internal and external datasets to produce actionable player insights for recruitment decisions.',
+      'Produced data profiles and visualisations of target players aligned with the club’s recruitment strategy.',
+      'Worked with local, national and international area coordinators and scouts on player tracking, fixture scheduling, coverage and report analysis.',
+      'Improved the scouting report form, built position-specific profiles and managed internal squad lists across age groups and positions.',
+      'Developed an AI solution to optimise scouting routes, making talent identification faster and more efficient.',
+      'Created advanced metrics and valuation models to deepen analysis and improve club decision-making.',
+    ],
+    tags: ['Recruitment', 'Data profiling', 'Scouting operations', 'AI', 'Valuation'],
     images: [
       '/images/Lead Recruitment Analyst/Scouting/0B61B93E-50D4-44A5-82F4-A5E7AFDD31FD.jpg',
       '/images/Lead Recruitment Analyst/Scouting/1295adac-b368-428b-8f8c-9c54bebe00cf.jpg',
       '/images/Lead Recruitment Analyst/Scouting/23310E2C-6EB3-456A-AB0D-66D14509BBDE.jpg',
       '/images/Lead Recruitment Analyst/Scouting/D492D1D1-0B83-43C5-B590-3343436790BB_1_105_c.jpeg',
+      '/images/Lead Recruitment Analyst/Scoutin AI/Planner.png',
     ],
   },
   {
