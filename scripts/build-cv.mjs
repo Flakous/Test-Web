@@ -41,11 +41,11 @@ const player = experience.find((r) => r.id === 'player');
 const html = `<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 14mm 15mm; }
+  @page { size: A4; margin: 12mm 15mm; }
   * { box-sizing: border-box; }
-  body { font: 9.2pt/1.45 Inter, system-ui, sans-serif; color: #18181b; margin: 0; }
+  body { font: 9pt/1.42 Inter, system-ui, sans-serif; color: #18181b; margin: 0; }
   h1 { font: 30pt/1 'Instrument Serif', Georgia, serif; margin: 0; letter-spacing: -0.01em; }
-  h2 { font: 14pt/1.1 'Instrument Serif', Georgia, serif; margin: 14pt 0 6pt; padding-bottom: 3pt; border-bottom: 0.6pt solid #d4d4d8; }
+  h2 { font: 14pt/1.1 'Instrument Serif', Georgia, serif; margin: 12pt 0 5pt; padding-bottom: 3pt; border-bottom: 0.6pt solid #d4d4d8; }
   h3 { font-size: 9.8pt; margin: 0; font-weight: 600; }
   a { color: inherit; text-decoration: none; }
   .accent { color: #15803d; }

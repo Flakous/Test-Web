@@ -85,6 +85,7 @@ export const experience = [
       'Led sourcing and analysis of internal and external datasets to produce actionable player insights for recruitment decisions.',
       'Produced data profiles and visualisations of target players aligned with the club’s recruitment strategy.',
       'Worked with local, national and international area coordinators and scouts on player tracking, fixture scheduling, coverage and report analysis.',
+      'Held regular meetings with the Head Scout and lead scouts and kept daily contact with the scouting network to align priorities, targets and report feedback.',
       'Improved the scouting report form, built position-specific profiles and managed internal squad lists across age groups and positions.',
       'Developed an AI solution to optimise scouting routes, making talent identification faster and more efficient.',
       'Created advanced metrics and valuation models to deepen analysis and improve club decision-making.',
