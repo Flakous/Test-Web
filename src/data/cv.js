@@ -155,12 +155,12 @@ export const experience = [
     period: '2017 – 2022',
     location: 'Czech Republic, Slovakia, Latvia, Greece',
     summary:
-      'Came through the AC Sparta Praha academy; Slovakia youth international; professional football in four countries.',
+      'Came through the AC Sparta Praha academy; Slovakia U21 international; professional football in four countries.',
     highlights: [
       'First-hand understanding of dressing rooms and how coaches and players actually use information.',
       'The reason my analysis is built to be used on the pitch, not just read.',
     ],
-    tags: ['Slovakia youth international', 'Sparta academy'],
+    tags: ['Slovakia U21', 'Sparta academy'],
     images: [],
   },
 ];
@@ -168,9 +168,9 @@ export const experience = [
 export const projects = [
   {
     title: 'Club insights platform',
-    text: 'One environment for scouting reports, player data, team performance, ratings, alerts and longitudinal player profiles.',
-    tags: ['Python', 'SQL', 'Streamlit', 'Cloud'],
-    image: '/images/Lead Recruitment Analyst/Scouting Platform/Platform.png',
+    text: 'Sparta Data Platform: the club’s own internal analytics app for opposition reports, gameweek reviews, player profiles, ratings and alerts — replacing external platforms.',
+    tags: ['Python', 'SQL', 'Web app', 'Cloud'],
+    image: '/images/Platform/sparta-data-platform.jpg',
   },
   {
     title: 'Scout AI Planner',
@@ -180,9 +180,9 @@ export const projects = [
   },
   {
     title: 'Event & tracking player models',
-    text: 'Position ratings combining StatsBomb event value (OBV, pass difficulty) with SkillCorner physical and game-intelligence tracking metrics.',
-    tags: ['StatsBomb', 'SkillCorner', 'Tracking'],
-    image: '/images/Lead Recruitment Analyst/2.png',
+    text: 'Decision models on event and tracking data — e.g. which pass option the model rated highest versus the one played — plus SkillCorner physical and game-intelligence position ratings.',
+    tags: ['Tracking', 'Decision-making', 'SkillCorner', 'StatsBomb'],
+    image: '/images/Platform/pass-decision-model.jpg',
   },
   {
     title: 'Game-to-game & team models',

@@ -13,7 +13,7 @@ const Work = () => (
         <Reveal key={p.title} delay={(i % 2) * 0.08} className="panel group flex flex-col overflow-hidden">
           {p.image && (
             <div className="border-b border-line bg-bg p-3">
-              <Gallery images={[p.image]} className="!grid-cols-1 [&_button]:aspect-[16/9]" />
+              <Gallery images={[p.image]} className="!grid-cols-1 [&_button]:aspect-[16/9] [&_img]:object-contain" />
             </div>
           )}
           <div className="flex flex-1 flex-col p-6">

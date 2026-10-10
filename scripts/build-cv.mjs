@@ -33,7 +33,7 @@ const headline =
     : 'Club Analytics · Football Insights · Performance Analysis · Recruitment';
 
 const intro =
-  'Football insights leader who has run a club analysis department and now leads club analytics and insights at AC Sparta Praha. Brings performance analysis, data science and recruitment data together into one service for the coaching staff and the Sporting Director. Former professional player and Slovakia youth international, UCFB-educated in the UK.';
+  'Football insights leader who has run a club analysis department and now leads club analytics and insights at AC Sparta Praha. Brings performance analysis, data science and recruitment data together into one service for the coaching staff and the Sporting Director. Former professional player and Slovakia U21 international, UCFB-educated in the UK.';
 
 const roles = experience.filter((r) => r.id !== 'player');
 const player = experience.find((r) => r.id === 'player');

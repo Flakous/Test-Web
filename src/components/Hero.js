@@ -68,8 +68,9 @@ const Hero = () => (
       />
       <div className="panel absolute -bottom-6 -left-5 right-6 space-y-2.5 px-4 py-3 shadow-xl sm:right-auto sm:max-w-[17rem]">
         <div>
-          <p className="eyebrow">Former pro</p>
-          <p className="text-sm font-medium">Slovakia youth international · Sparta academy</p>
+          <p className="eyebrow">Former</p>
+          <p className="text-sm font-medium">Slovakia U21</p>
+          <p className="text-sm font-medium">DAC Head of Analysis</p>
         </div>
         <div className="border-t border-line pt-2.5">
           <p className="eyebrow text-accent">Currently</p>
