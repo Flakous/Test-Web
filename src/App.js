@@ -1,67 +1,36 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Header from './components/Header';
-import AboutMe from './components/AboutMe';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import Now from './components/Now';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
+import Work from './components/Work';
+import Toolkit from './components/Toolkit';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import { profile } from './data/cv';
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-dark-bg transition-colors duration-300">
-      <Header />
-        
+      <div className="min-h-screen overflow-x-clip">
+        <Nav />
         <main>
-          <section id="about" className="min-h-screen flex items-center section-container">
-      <AboutMe />
-          </section>
-
-          <section id="experience" className="section-container bg-gray-100 dark:bg-dark-card">
-      <Experience />
-          </section>
-
-          <section id="skills" className="section-container">
-      <Skills />
-          </section>
-
-          <section id="education" className="section-container bg-gray-100 dark:bg-dark-card">
-      <Education />
-          </section>
-
-          <section id="contact" className="section-container">
-      <Contact />
-          </section>
+          <Hero />
+          <Now />
+          <Experience />
+          <Work />
+          <Toolkit />
+          <Education />
+          <Contact />
         </main>
-
-        <footer className="bg-white dark:bg-dark-card py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
-            <p>© {new Date().getFullYear()} Kristián Flak. All rights reserved.</p>
-          </div>
+        <footer className="wrap flex flex-wrap justify-between gap-2 border-t border-line py-8 text-sm text-muted">
+          <p>© {new Date().getFullYear()} {profile.name}</p>
+          <p>Press <kbd className="font-mono">⌘K</kbd> to jump anywhere</p>
         </footer>
-
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
-    </div>
+      </div>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-
-
-
