@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiCopy, FiCheck } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiCopy, FiCheck, FiDownload } from 'react-icons/fi';
 import { profile } from '../data/cv';
 import { Reveal } from './ui';
 
@@ -33,6 +33,7 @@ const Contact = () => {
           <button onClick={copy} className="btn-ghost" aria-label="Copy email address">
             {copied ? <FiCheck className="text-accent" /> : <FiCopy />} {copied ? 'Copied' : 'Copy'}
           </button>
+          <a href={profile.cvPdf} download className="btn-ghost"><FiDownload /> Download CV (PDF)</a>
         </div>
 
         <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted">

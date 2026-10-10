@@ -21,7 +21,7 @@ const Now = () => (
     <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((s, i) => (
         <Reveal key={s.label} delay={i * 0.08} className="border-t border-line pt-5">
-          <p className="font-display text-6xl leading-none">{s.value}</p>
+          <p className={`font-display leading-none ${s.value.length > 4 ? 'text-5xl' : 'text-6xl'}`}>{s.value}</p>
           <p className="mt-3 text-sm leading-relaxed text-muted">{s.label}</p>
         </Reveal>
       ))}

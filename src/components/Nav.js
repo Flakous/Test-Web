@@ -41,6 +41,7 @@ const Palette = ({ open, onClose }) => {
     () => [
       ...sections.map((s) => ({ label: `Go to ${s.name}`, run: () => go(s.id) })),
       { label: `Email ${profile.name}`, run: () => (window.location.href = `mailto:${profile.email}`) },
+      { label: 'Download CV (PDF)', run: () => window.open(profile.cvPdf, '_blank', 'noopener') },
       { label: 'Open LinkedIn', run: () => window.open(profile.linkedin, '_blank', 'noopener') },
       { label: isDark ? 'Switch to light theme' : 'Switch to dark theme', run: toggleTheme },
     ],

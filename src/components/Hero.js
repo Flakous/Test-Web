@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowDown, FiMail, FiLinkedin } from 'react-icons/fi';
+import { FiDownload, FiMail, FiLinkedin } from 'react-icons/fi';
 import { profile } from '../data/cv';
 import { BlurText, src } from './ui';
 
@@ -50,9 +50,7 @@ const Hero = () => (
       >
         <a href={`mailto:${profile.email}`} className="btn-solid"><FiMail /> Get in touch</a>
         <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost"><FiLinkedin /> LinkedIn</a>
-        <button onClick={() => document.getElementById('now')?.scrollIntoView({ behavior: 'smooth' })} className="btn-ghost">
-          <FiArrowDown /> What I do
-        </button>
+        <a href={profile.cvPdf} download className="btn-ghost"><FiDownload /> Download CV</a>
       </motion.div>
     </div>
 

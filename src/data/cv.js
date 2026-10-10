@@ -2,7 +2,7 @@
 
 export const profile = {
   name: 'Kristián Flak',
-  role: 'Head of Recruitment Analysis · Club Analytics & Insights',
+  role: 'Head of Club Analytics & Insights',
   club: 'AC Sparta Praha',
   tagline: 'Football insights leader',
   summary:
@@ -13,14 +13,15 @@ export const profile = {
   phoneHref: 'tel:+420776031313',
   linkedin: 'https://www.linkedin.com/in/kristi%C3%A1n-flak-811152165/',
   photo: '/images/Main photo.jpeg',
+  cvPdf: '/Kristian_Flak_CV.pdf',
   openTo: 'Open to head-of-department roles in the UK and abroad',
 };
 
 export const stats = [
   { value: '2×', label: 'Back-to-back 2nd places at DAC — best in club history, record points' },
   { value: '2', label: 'Club-record outgoing transfers identified and supported (Krstović, Bajo)' },
-  { value: '14', label: 'Data and analytics providers reviewed for Sparta leadership' },
-  { value: '4', label: 'Analysts led as Head of Analysis at DAC 1904' },
+  { value: '6', label: 'Analysts led as Head of Analysis at DAC 1904' },
+  { value: '35% → 60%', label: 'Data and software costs at Sparta: 35% cut by dropping unused tools, heading to 60% as we build core tools in-house' },
 ];
 
 // What the current role actually covers, beyond the title.
@@ -50,7 +51,7 @@ export const pillars = [
 export const experience = [
   {
     id: 'sparta',
-    title: 'Head of Recruitment Analysis · Club Analytics & Insights',
+    title: 'Head of Club Analytics & Insights',
     company: 'AC Sparta Praha',
     period: 'Aug 2024 – Present',
     location: 'Prague, Czech Republic',
@@ -63,7 +64,7 @@ export const experience = [
       'Support the Sporting Director on strategy, squad planning, job descriptions and staff identification.',
       'Translate the football strategy into position profiles, ratings, team KPIs, expected-points and Elo models.',
       'Built SkillCorner physical and game-intelligence position ratings to add tracking context to event data.',
-      'Led a structured review of 14 data providers: trials, technical evaluation and contract advice.',
+      'Cut 35% of data and software spend by dropping unused tools; building core tools in-house to reach a 60% total reduction.',
       'Support outgoing-transfer strategy and early club-to-club conversations about player sales.',
     ],
     tags: ['Insights leadership', 'Recruitment', 'Tracking data', 'Sporting strategy', 'Platform build'],
@@ -80,7 +81,7 @@ export const experience = [
     company: 'DAC 1904 Dunajská Streda',
     period: 'Nov 2023 – Aug 2024',
     location: 'Dunajská Streda, Slovakia',
-    summary: 'Led video, data and performance analysis across the club with a four-person department.',
+    summary: 'Led video, data and performance analysis across the club with a six-person department.',
     highlights: [
       'Part of back-to-back 2nd-place finishes — the best results in club history, with record points.',
       'Identified and supported the sale of Krstović and Bajo for club-record fees.',
