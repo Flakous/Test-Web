@@ -62,6 +62,7 @@ export const experience = [
       'Lead the football data and analytics function, coordinating a data engineer and analytical support.',
       'Work with the first-team coaching staff every week on tactical, opposition, video and data analysis.',
       'Support the Sporting Director on strategy, squad planning, job descriptions and staff identification.',
+      'Learn daily from Sporting Director Tomáš Rosický, who led Sparta to back-to-back Czech titles (2022/23, 2023/24) and its first Champions League league phase in 19 years (2024/25).',
       'Hold regular meetings with the Head of Scouting and lead scouts and keep daily contact with the scouting network to align priorities, targets and report feedback.',
       'Translate the football strategy into position profiles, ratings, team KPIs, expected-points and Elo models.',
       'Built SkillCorner physical and game-intelligence position ratings to add tracking context to event data.',
