@@ -16,6 +16,9 @@ writeFileSync(dataPath, readFileSync(path.join(root, 'src/data/cv.js')));
 const cv = await import(pathToFileURL(dataPath).href);
 const { profile, stats, experience, projects, toolkit, education, languages } = cv;
 
+const site = 'https://interactivecv-psi.vercel.app';
+const photoUrl = pathToFileURL(path.join(root, 'public', profile.photo)).href;
+
 const variant = process.argv[2] === 'leicester' ? 'leicester' : 'general';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -50,7 +53,11 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   a { color: inherit; text-decoration: none; }
   .accent { color: #15803d; }
   .muted { color: #52525b; }
-  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12pt; }
+  .head { display: flex; align-items: center; gap: 12pt; }
+  .who { flex: 1; }
+  .photo { width: 64pt; height: 64pt; border-radius: 50%; object-fit: cover; object-position: 50% 28%; border: 0.6pt solid #d4d4d8; }
+  .site { display: block; margin-top: 9pt; padding: 5pt 8pt; border-left: 2pt solid #15803d; background: #f0fdf4; font-size: 8.4pt; color: #14532d; }
+  .site u { text-underline-offset: 1.5pt; }
   .role { font-weight: 600; margin-top: 4pt; }
   .tag { font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; color: #52525b; margin-top: 3pt; }
   .contact { text-align: right; font-size: 8.4pt; color: #3f3f46; line-height: 1.55; }
@@ -58,7 +65,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .stat { border-top: 1.2pt solid #15803d; padding-top: 4pt; }
   .stat b { font: 17pt/1 'Instrument Serif', serif; display: block; }
   .stat span { font-size: 7.6pt; color: #52525b; line-height: 1.35; display: block; margin-top: 2pt; }
-  .job { margin-bottom: 8pt; break-inside: avoid; }
+  .job { margin-bottom: 8pt; }
+  .job-top { break-after: avoid; }
+  li { break-inside: avoid; }
   .job-top { display: flex; justify-content: space-between; gap: 8pt; }
   .when { font-size: 8pt; color: #52525b; white-space: nowrap; }
   ul { margin: 3pt 0 0; padding-left: 11pt; }
@@ -74,7 +83,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .tk b { font-weight: 600; }
 </style></head><body>
 <div class="head">
-  <div>
+  <img class="photo" src="${photoUrl}" alt="">
+  <div class="who">
     <h1>${esc(profile.name)}</h1>
     <div class="role">${esc(profile.role)} <span class="muted">· ${esc(profile.club)}</span></div>
     <div class="tag">${esc(headline)}</div>
@@ -82,9 +92,10 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   <div class="contact">
     ${esc(profile.location)}<br>${variant === 'leicester' ? 'Open to relocating to the UK<br>' : ''}
     ${esc(profile.phone)} · <a href="mailto:${profile.email}">${esc(profile.email)}</a><br>
-    <a href="${profile.linkedin}">LinkedIn</a> · <a href="https://interactivecv-psi.vercel.app">interactivecv-psi.vercel.app</a>
+    <a href="${profile.linkedin}">LinkedIn</a>
   </div>
 </div>
+<a class="site" href="${site}"><b>Interactive CV</b> — projects, platform screenshots and models: <u>${site.replace('https://', '')}</u> ↗</a>
 
 <h2>Profile</h2>
 <p style="margin:0">${esc(intro)}</p>
