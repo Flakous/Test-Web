@@ -24,7 +24,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 const fit = [
   ['Lead performance analysis, data science and recruitment data', 'Head of Analysis at DAC 1904 (six analysts). At Sparta, lead club analytics and insights with a data engineer, linking scouts, analysts and coaches.'],
-  ['Objective, timely insight for the First Team Manager and Sporting Director', 'Daily tactical, opposition, video and data work with Sparta’s first-team staff; strategic support to the Sporting Director on squad planning, staff roles and player trading.'],
+  ['Objective, timely insight for the First Team Manager and Sporting Director', 'Weekly tactical, opposition, video and data work with Sparta’s first-team staff; strategic support to the Sporting Director on squad planning, staff roles and player trading.'],
   ['KPIs linked to the Football Strategy', 'Turned the game model into position profiles, team KPIs, player ratings and recruitment criteria, with shared reporting standards.'],
   ['Modern platforms, tracking data and AI-enabled workflows', 'SkillCorner tracking, StatsBomb, Impect, Opta, Wyscout, Hudl; Python, SQL, cloud; AI-assisted scouting planner and in-house tools.'],
   ['Track record of influencing high-level decisions', 'DAC: back-to-back 2nd places with record points; Krstović and Bajo sold for club-record fees. Sparta: succession, valuation and sale input.'],

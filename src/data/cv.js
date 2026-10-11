@@ -32,7 +32,7 @@ export const pillars = [
   },
   {
     title: 'First-team support',
-    text: 'Daily tactical, technical, opposition, video and data analysis with the coaching staff — and an independent voice when a decision needs challenge.',
+    text: 'Weekly tactical, technical, opposition, video and data analysis with the coaching staff — and an independent voice when a decision needs challenge.',
   },
   {
     title: 'Sporting Director partner',
@@ -60,7 +60,7 @@ export const experience = [
       'Promoted from Lead Recruitment Analyst to lead the club’s football data and insights function across recruitment, first team and sporting leadership.',
     highlights: [
       'Lead the football data and analytics function, coordinating a data engineer and analytical support.',
-      'Work with the first-team coaching staff every day on tactical, opposition, video and data analysis.',
+      'Work with the first-team coaching staff every week on tactical, opposition, video and data analysis.',
       'Support the Sporting Director on strategy, squad planning, job descriptions and staff identification.',
       'Hold regular meetings with the Head of Scouting and lead scouts and keep daily contact with the scouting network to align priorities, targets and report feedback.',
       'Translate the football strategy into position profiles, ratings, team KPIs, expected-points and Elo models.',
