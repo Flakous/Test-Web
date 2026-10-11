@@ -20,7 +20,7 @@ export const profile = {
 export const stats = [
   { value: '2×', label: 'Back-to-back 2nd places at DAC — best in club history, record points' },
   { value: '2', label: 'Club-record outgoing transfers identified and supported (Krstović, Bajo)' },
-  { value: '6', label: 'Analysts led as Head of Analysis at DAC 1904' },
+  { value: '3rd', label: 'Season learning daily from Sporting Director Tomáš Rosický — Sparta and Arsenal legend' },
   { value: '35%', label: 'Of the data and software budget saved at Sparta by replacing external platforms with our own in-house tools' },
 ];
 
