@@ -1,6 +1,7 @@
 // Builds the downloadable PDF CV from src/data/cv.js with headless Chrome.
 //   node scripts/build-cv.mjs              -> public/Kristian_Flak_CV.pdf (general)
 //   node scripts/build-cv.mjs leicester    -> out/Kristian_Flak_CV_Leicester.pdf (with role-fit table)
+//   node scripts/build-cv.mjs rsl          -> out/Kristian_Flak_CV_RSL.pdf (Real Salt Lake)
 import { readFileSync, writeFileSync, mkdirSync, mkdtempSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
@@ -19,24 +20,74 @@ const { profile, stats, experience, projects, toolkit, education, languages } = 
 const site = 'https://interactivecv-psi.vercel.app';
 const photoUrl = pathToFileURL(path.join(root, 'public', profile.photo)).href;
 
-const variant = process.argv[2] === 'leicester' ? 'leicester' : 'general';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-const fit = [
-  ['Lead performance analysis, data science and recruitment data', 'Head of Analysis at DAC 1904 (six analysts). At Sparta, lead club analytics and insights with a data engineer, linking scouts, analysts and coaches.'],
-  ['Objective, timely insight for the First Team Manager and Sporting Director', 'Weekly tactical, opposition, video and data work with Sparta’s first-team staff; strategic support to the Sporting Director on squad planning, staff roles and player trading.'],
-  ['KPIs linked to the Football Strategy', 'Turned the game model into position profiles, team KPIs, player ratings and recruitment criteria, with shared reporting standards.'],
-  ['Modern platforms, tracking data and AI-enabled workflows', 'SkillCorner tracking, StatsBomb, Impect, Opta, Wyscout, Hudl; Python, SQL, cloud; AI-assisted scouting planner and in-house tools.'],
-  ['Track record of influencing high-level decisions', 'DAC: back-to-back 2nd places with record points; Krstović and Bajo sold for club-record fees. Sparta: succession, valuation and sale input.'],
-];
-
-const headline =
-  variant === 'leicester'
-    ? 'Football Insights · Performance Analysis · Recruitment Data · Decision Support'
-    : 'Club Analytics · Football Insights · Performance Analysis · Recruitment';
-
-const intro =
+const baseIntro =
   'Football insights leader who has run a club analysis department and now leads club analytics and insights at AC Sparta Praha. Connects performance analysis, recruitment, data science and traditional scouting into one football insights function — built to help coaches and sporting directors make better decisions. Former professional player and Slovakia U21 international, UCFB-educated in the UK.';
+
+// Each variant can change the tagline, intro, fit table, project order, extra bullets and toolkit.
+const variants = {
+  general: {
+    file: 'public/Kristian_Flak_CV.pdf',
+    headline: 'Club Analytics · Football Insights · Performance Analysis · Recruitment',
+    intro: baseIntro,
+  },
+  leicester: {
+    file: 'out/Kristian_Flak_CV_Leicester.pdf',
+    headline: 'Football Insights · Performance Analysis · Recruitment Data · Decision Support',
+    intro: baseIntro,
+    fitTitle: 'Fit for Head of Football Insights',
+    fit: [
+      ['Lead performance analysis, data science and recruitment data', 'Head of Analysis at DAC 1904 (six analysts). At Sparta, lead club analytics and insights with a data engineer, linking scouts, analysts and coaches.'],
+      ['Objective, timely insight for the First Team Manager and Sporting Director', 'Weekly tactical, opposition, video and data work with Sparta’s first-team staff; strategic support to the Sporting Director on squad planning, staff roles and player trading.'],
+      ['KPIs linked to the Football Strategy', 'Turned the game model into position profiles, team KPIs, player ratings and recruitment criteria, with shared reporting standards.'],
+      ['Modern platforms, tracking data and AI-enabled workflows', 'SkillCorner tracking, StatsBomb, Impect, Opta, Wyscout, Hudl; Python, SQL, cloud; AI-assisted scouting planner and in-house tools.'],
+      ['Track record of influencing high-level decisions', 'DAC: back-to-back 2nd places with record points; Krstović and Bajo sold for club-record fees. Sparta: succession, valuation and sale input.'],
+    ],
+  },
+  rsl: {
+    file: 'out/Kristian_Flak_CV_RSL.pdf',
+    headline: 'Recruitment Analytics · Player Evaluation · Scouting Decision Support',
+    intro:
+      'Recruitment analytics leader with 4.5 years in professional club analysis, now Head of Club Analytics & Insights at AC Sparta Praha after leading its recruitment analysis. Builds the player evaluation models, data pipelines and dashboards that scouts and sporting directors use in every transfer window — combining event and tracking data, video and live scouting. Former professional player and Slovakia U21 international; MSc in Performance Analysis (UK).',
+    fitTitle: 'Fit for Director of Soccer Analytics',
+    fit: [
+      ['Recruitment analytics strategy across first team, second team and academy', 'Led recruitment analysis at Sparta, now head the club’s analytics function; profiles and squad lists across age groups and positions; regular meetings with the Head of Scouting and lead scouts.'],
+      ['Positional profiles, benchmarking and similarity modelling', 'Position-specific profiles and ratings, redesigned scouting report form, and player-similarity and machine-learning evaluation models built with the analytics team.'],
+      ['Data providers and integrations (StatsBomb, Wyscout, SkillCorner)', 'Integrated StatsBomb, Wyscout, SkillCorner, Impect and Opta into club-owned databases; replaced external platforms, saving around 35% of the data and software budget.'],
+      ['Evaluation models, contract value and transfer shortlists', 'Player ratings, valuation and market-value models, succession planning and target shortlists; DAC: identified Krstović and Bajo, later sold for club-record fees.'],
+      ['Dashboards, data ingestion and integrity', 'Sparta Data Platform: ingestion, storage, dashboards, automated reports and alerts (Python, SQL, PostgreSQL/Supabase, AWS).'],
+      ['Partnering with the Sporting Director, scouts and coaches', 'Learn daily from Sporting Director Tomáš Rosický; weekly first-team analysis; daily contact with the scouting network across transfer windows.'],
+    ],
+    projectOrder: ['Event & tracking player models', 'Club insights platform', 'Scout AI Planner', 'Game-to-game & team models'],
+    extraBullets: {
+      sparta: {
+        after: 'Hold regular meetings',
+        text: 'Develop player-similarity and machine-learning evaluation models with the analytics team for talent identification and target benchmarking.',
+      },
+    },
+    toolkitExtra: { 'Engineering & BI': ['R (working knowledge)'] },
+    // Earlier analyst roles shown as one-line summaries to keep two pages.
+    compactRoles: ['dac-coach', 'dac-opp'],
+  },
+};
+
+const variantName = variants[process.argv[2]] ? process.argv[2] : 'general';
+const v = variants[variantName];
+const { headline, intro } = v;
+
+const withExtras = (r) => {
+  const extra = v.extraBullets?.[r.id];
+  if (!extra) return r.highlights;
+  const i = r.highlights.findIndex((h) => h.startsWith(extra.after));
+  const list = [...r.highlights];
+  list.splice(i + 1, 0, extra.text);
+  return list;
+};
+const orderedProjects = v.projectOrder
+  ? v.projectOrder.map((t) => projects.find((p) => p.title === t)).filter(Boolean)
+  : projects;
+const tools = toolkit.map((g) => ({ ...g, items: [...g.items, ...(v.toolkitExtra?.[g.group] || [])] }));
 
 const roles = experience.filter((r) => r.id !== 'player');
 const player = experience.find((r) => r.id === 'player');
@@ -101,13 +152,13 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 <p style="margin:0">${esc(intro)}</p>
 <div class="stats">${stats.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
 
-${variant === 'leicester' ? `<h2>Fit for Head of Football Insights</h2>
-<table>${fit.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</table>` : ''}
+${v.fit ? `<h2>${esc(v.fitTitle)}</h2>
+<table>${v.fit.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</table>` : ''}
 
 <h2>Experience</h2>
 ${roles.map((r) => `<div class="job">
   <div class="job-top"><h3>${esc(r.title)} <span class="muted" style="font-weight:400">· ${esc(r.company)}</span></h3><span class="when">${esc(r.period)} · ${esc(r.location.split(',')[0])}</span></div>
-  ${r.highlights.length ? `<ul>${r.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>` : `<div class="muted">${esc(r.summary)}</div>`}
+  ${r.highlights.length && !v.compactRoles?.includes(r.id) ? `<ul>${withExtras(r).map((h) => `<li>${esc(h)}</li>`).join('')}</ul>` : `<div class="muted">${esc(r.summary)}</div>`}
 </div>`).join('')}
 <div class="job">
   <div class="job-top"><h3>${esc(player.title)}</h3><span class="when">${esc(player.period)}</span></div>
@@ -115,22 +166,20 @@ ${roles.map((r) => `<div class="job">
 </div>
 
 <h2>Selected work</h2>
-<div class="grid2">${projects.map((p) => `<div class="proj"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></div>`).join('')}</div>
+<div class="grid2">${orderedProjects.map((p) => `<div class="proj"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></div>`).join('')}</div>
 
 <h2>Education, toolkit, languages</h2>
 <div class="grid2">
   <div>${education.map((e) => `<div style="margin-bottom:4pt"><h3>${esc(e.degree)}</h3><div class="muted">${esc(e.school)} · ${esc(e.period)}</div><div class="muted">${esc(e.note)}</div></div>`).join('')}
   <div class="tk"><b>Languages:</b> ${languages.map(esc).join(' · ')}</div></div>
-  <div>${toolkit.map((g) => `<div class="tk"><b>${esc(g.group)}:</b> ${g.items.map(esc).join(', ')}</div>`).join('')}</div>
+  <div>${tools.map((g) => `<div class="tk"><b>${esc(g.group)}:</b> ${g.items.map(esc).join(', ')}</div>`).join('')}</div>
 </div>
 </body></html>`;
 
 const htmlPath = path.join(tmp, 'cv.html');
 writeFileSync(htmlPath, html);
 
-const out = variant === 'leicester'
-  ? path.join(root, 'out/Kristian_Flak_CV_Leicester.pdf')
-  : path.join(root, 'public/Kristian_Flak_CV.pdf');
+const out = path.join(root, v.file);
 mkdirSync(path.dirname(out), { recursive: true });
 
 const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';

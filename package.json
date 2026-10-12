@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "cv": "node scripts/build-cv.mjs && node scripts/build-cv.mjs leicester",
+    "cv": "node scripts/build-cv.mjs && node scripts/build-cv.mjs leicester && node scripts/build-cv.mjs rsl",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
