@@ -49,7 +49,7 @@ const variants = {
     file: 'out/Kristian_Flak_CV_RSL.pdf',
     headline: 'Recruitment Analytics · Player Evaluation · Scouting Decision Support',
     intro:
-      'Recruitment analytics leader with 4.5 years in professional club analysis, now Head of Club Analytics & Insights at AC Sparta Praha after leading its recruitment analysis. Builds the player evaluation models, data pipelines and dashboards that scouts and sporting directors use in every transfer window — combining event and tracking data, video and live scouting. Former professional player and Slovakia U21 international; MSc in Performance Analysis (UK).',
+      'Recruitment analytics leader with 5 years in professional club analysis, now Head of Club Analytics & Insights at AC Sparta Praha after leading its recruitment analysis. Builds the player evaluation models, data pipelines and dashboards that scouts and sporting directors use in every transfer window — combining event and tracking data, video and live scouting. Former professional player and Slovakia U21 international; MSc in Performance Analysis (UK).',
     fitTitle: 'Fit for Director of Soccer Analytics',
     fit: [
       ['Recruitment analytics strategy across first team, second team and academy', 'Led recruitment analysis at Sparta, now head the club’s analytics function; profiles and squad lists across age groups and positions; regular meetings with the Head of Scouting and lead scouts.'],
