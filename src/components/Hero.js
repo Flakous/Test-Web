@@ -7,18 +7,6 @@ import { BlurText, src } from './ui';
 const Hero = () => (
   <section className="wrap grid min-h-[92vh] items-center gap-12 pt-24 pb-12 md:grid-cols-[1.4fr_1fr]">
     <div>
-      <motion.p
-        className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-        </span>
-        {profile.openTo}
-      </motion.p>
-
       <h1 className="font-display text-5xl leading-[1.02] tracking-tight sm:text-7xl">
         <BlurText text="Football insight that changes decisions." />
       </h1>

@@ -6,7 +6,7 @@ export const profile = {
   club: 'AC Sparta Praha',
   tagline: 'Football insights leader',
   summary:
-    'I bring performance analysis, data science, recruitment data and traditional scouting together into one service for the coaching staff, the Head of Scouting and the Sporting Director. Former professional player, UK-educated analyst, and builder of the tools my clubs make decisions with.',
+    'I connect performance analysis, recruitment, data science and traditional scouting into one football insights function — built to help coaches and sporting directors make better decisions. Former professional player, UK-educated analyst, and builder of the tools my clubs make decisions with.',
   location: 'Prague, Czech Republic',
   email: 'business.flak@gmail.com',
   phone: '+420 776 031 313',
@@ -14,11 +14,10 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/kristi%C3%A1n-flak-811152165/',
   photo: '/images/Main photo.jpeg',
   cvPdf: '/Kristian_Flak_CV.pdf',
-  openTo: 'Open to head-of-department roles in the UK and abroad',
 };
 
 export const stats = [
-  { value: '2×', label: 'Back-to-back 2nd places at DAC — best in club history, record points' },
+  { value: '2×', label: 'Part of the DAC staff that delivered back-to-back 2nd-place finishes — the best league results in club history' },
   { value: '2', label: 'Club-record outgoing transfers identified and supported (Krstović, Bajo)' },
   { value: '3rd', label: 'Season learning daily from Sporting Director Tomáš Rosický — Sparta and Arsenal legend' },
   { value: '35%', label: 'Of the data and software budget saved at Sparta by replacing external platforms with our own in-house tools' },
@@ -40,7 +39,7 @@ export const pillars = [
   },
   {
     title: 'Recruitment & trading',
-    text: 'Live scouting, video, event and tracking data and market information combined into identification, valuation and sales strategy.',
+    text: 'Combine live scouting, video, event and tracking data with market intelligence to support player identification, valuation, recruitment and sales strategy.',
   },
   {
     title: 'Platforms & AI',
@@ -180,7 +179,7 @@ export const experience = [
     period: '2017 – 2022',
     location: 'Czech Republic, Slovakia, Latvia, Greece',
     summary:
-      'Came through the AC Sparta Praha academy; Slovakia U21 international; professional football in four countries.',
+      'Five years in professional football across Czechia, Slovakia, Latvia and Greece — experience that still shapes how I translate data into football language.',
     highlights: [
       'First-hand understanding of dressing rooms and how coaches and players actually use information.',
       'The reason my analysis is built to be used on the pitch, not just read.',
@@ -199,7 +198,7 @@ export const projects = [
   },
   {
     title: 'Scout AI Planner',
-    text: 'AI-assisted planning that assigns scouts to matches by priority, location and expertise, with a live reporting view.',
+    text: 'AI-assisted planning that assigns scouts to matches by priority, location and expertise. It improved scouting routes and cut the workload of the technical scouting department.',
     tags: ['AI', 'Automation'],
     image: '/images/Lead Recruitment Analyst/Scoutin AI/Planner.png',
   },

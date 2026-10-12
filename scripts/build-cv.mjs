@@ -36,7 +36,7 @@ const headline =
     : 'Club Analytics · Football Insights · Performance Analysis · Recruitment';
 
 const intro =
-  'Football insights leader who has run a club analysis department and now leads club analytics and insights at AC Sparta Praha. Brings performance analysis, data science, recruitment data and traditional scouting together into one service for the coaching staff, the Head of Scouting and the Sporting Director. Former professional player and Slovakia U21 international, UCFB-educated in the UK.';
+  'Football insights leader who has run a club analysis department and now leads club analytics and insights at AC Sparta Praha. Connects performance analysis, recruitment, data science and traditional scouting into one football insights function — built to help coaches and sporting directors make better decisions. Former professional player and Slovakia U21 international, UCFB-educated in the UK.';
 
 const roles = experience.filter((r) => r.id !== 'player');
 const player = experience.find((r) => r.id === 'player');
@@ -90,7 +90,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     <div class="tag">${esc(headline)}</div>
   </div>
   <div class="contact">
-    ${esc(profile.location)}<br>${variant === 'leicester' ? 'Open to relocating to the UK<br>' : ''}
+    ${esc(profile.location)}<br>
     ${esc(profile.phone)} · <a href="mailto:${profile.email}">${esc(profile.email)}</a><br>
     <a href="${profile.linkedin}">LinkedIn</a>
   </div>
